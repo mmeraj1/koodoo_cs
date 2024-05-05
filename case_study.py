@@ -2,10 +2,12 @@ from openai import OpenAI
 import os
 import json
 
-x = os.listdir('/Users/mohammadmeraj/Desktop/case_study_koodoo/casestudy')
-y = [i for i in x if ".mp3" in i ]
 f = open("key.json")
 data = json.load(f)
+
+x = os.listdir(data["file_locstion"])
+y = [i for i in x if ".mp3" in i ]
+
 
 for k in y:
   client = OpenAI(api_key = data["key"])
